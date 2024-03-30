@@ -29,7 +29,7 @@
     - name: connection check
       uri:
         url: http://52.64.148.106/healet-html/
-        register: output_check
+      register: output_check
 
     - debug:
         var: output_check.stdout_lines

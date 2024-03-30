@@ -1,7 +1,6 @@
 ---
-- name:
-  hosts:
-  become:
+- name: Ping Test
+  hosts: all
   tasks:
     - name:
       ping:

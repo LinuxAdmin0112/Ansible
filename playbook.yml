@@ -47,11 +47,10 @@
       shell: echo {{ pass }} | passwd {{ name }} --stdin
       register: pass_out
 
-    - name: User creation
-      user:
-        name: "{{ name }}"
-        password: "{{ pass_out }}"
-
     - name: output
       debug:
         var: out
+
+    - name: output
+      debug:
+        var: pass_out

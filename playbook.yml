@@ -38,6 +38,7 @@
         comment: "{{ comment }}"
         uid: "{{ uid }}"
         group: "{{ gid }}"
+        create_home: true
         home: "{{ home }}"
         shell: "{{ shell }}"
         state: present

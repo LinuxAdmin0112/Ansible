@@ -2,7 +2,7 @@
 - name: Web application deployment
   hosts: all
   become: true
-  gather_facts: no
+  gather_facts: yes
   tasks:
     - name: yum update
       yum:
@@ -32,11 +32,11 @@
       register: output_check
 
     - debug:
-        var: output_check
+        var: output_check.msg
 
-    - name: connection check
-      shell: curl -I http://52.64.148.106/healet-html/
-      register: connection_output
+#    - name: connection check
+#      shell: curl -I http://52.64.148.106/healet-html/
+#      register: connection_output
 
-    - debug:
-        var: connection_output.stdout_lines
+#    - debug:
+#        var: connection_output.stdout_lines

@@ -19,3 +19,9 @@
       get_url:
         url: "https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip"
         dest: /tmp
+
+    - name: copy to HTML folder
+      unarchive:
+        src: /tmp/healet.zip
+        dest: /var/www/html/
+        connection: local

@@ -21,7 +21,7 @@
 
     - name: download source files
       get_url:
-        url: {{ Source }}
+        url: "{{ Source }}"
         dest: /tmp
 
     - name: copy to HTML folder

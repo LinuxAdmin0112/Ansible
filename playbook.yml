@@ -51,5 +51,5 @@
     - name: output
       when: pass_out.changed == true
       debug:
-        var: out
         msg: Password created successfully
+        var: out

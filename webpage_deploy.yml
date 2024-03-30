@@ -24,4 +24,3 @@
       unarchive:
         src: /tmp/healet.zip
         dest: /var/www/html/
-        connection: local

@@ -32,10 +32,14 @@
 
 
   tasks:
+    - name: Encrypting Password
+      shell: echo {{ pass }} | passwd {{ name }} --stdin
+      register: pass_out
+
     - name: User creation
       user:
         name: "{{ name }}"
-        password: "{{ pass }}"
+        password: "{{ pass_out }}"
         comment: "{{ comment }}"
         uid: "{{ uid }}"
         group: "{{ gid }}"

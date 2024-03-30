@@ -48,10 +48,7 @@
       register: pass_out
 
     - name: output
-      debug:
-        var: out
-
-    - name: output
       when: pass_out.changed == true
       debug:
+        var: out
         msg: Password created successfully

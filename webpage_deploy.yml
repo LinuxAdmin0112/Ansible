@@ -26,5 +26,8 @@
         dest: /var/www/html/
 
     - name: connection check
-      uri:
-        url: http://localhost
+      shell: curl -I http://localhost
+      register: connection_output
+
+    - debug:
+        var: connection_output

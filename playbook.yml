@@ -4,4 +4,4 @@
   become:
   tasks:
     - name:
-      action: ping
+      ping:

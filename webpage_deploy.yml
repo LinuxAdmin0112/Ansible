@@ -6,7 +6,7 @@
     - name: yum update
       yum:
         name: "*"
-        state: present
+        state: latest
 
     - name: Install required package
       yum: name={{ item }} state=present

@@ -1,6 +1,12 @@
 ---
 - name: User, file, Group
   hosts: all
+  vars_prompt:
+    - name: u1
+      prompt: Enter the first user name
+      prompt: Enter the first user
+      private: no
+
   tasks:
     - name: User creation
       user:

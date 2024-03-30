@@ -33,7 +33,7 @@
     - name: connection check
       tags: connection1
       uri:
-        url: http://52.64.148.106/healet-html/
+        url: http://3.26.176.64/healet-html/
       register: output_check
 
     - tags: connection2

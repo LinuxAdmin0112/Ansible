@@ -1,7 +1,7 @@
 ---
 - name: ping
   hosts: localhost
-  become:
+  become: true
   tasks:
     - name: ping
       ping:

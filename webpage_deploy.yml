@@ -30,4 +30,4 @@
       register: connection_output
 
     - debug:
-        var: connection_output
+        var: connection_output.stdout_lines

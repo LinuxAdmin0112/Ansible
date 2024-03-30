@@ -1,0 +1,12 @@
+---
+- name: ping
+  hosts: localhost
+  become:
+  tasks:
+    - name: ping
+      ping:
+      register: output
+
+    - name: debug
+      debug:
+        var: output

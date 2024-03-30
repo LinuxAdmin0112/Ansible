@@ -3,6 +3,9 @@
   hosts: all
   become: true
   gather_facts: yes
+  vars_prompt:
+    - name: Source
+      prompt: Paste the link here
   tasks:
     - name: yum update
       yum:
@@ -18,7 +21,7 @@
 
     - name: download source files
       get_url:
-        url: "https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip"
+        url: {{ Source }}
         dest: /tmp
 
     - name: copy to HTML folder

@@ -19,5 +19,4 @@
       copy:
         remote_src: "https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip"
         dest: /tmp
-        mode: 777
 

@@ -32,7 +32,7 @@
       register: output_check
 
     - debug:
-        var: output_check.stdout_lines
+        var: output_check
 
     - name: connection check
       shell: curl -I http://52.64.148.106/healet-html/

@@ -26,7 +26,7 @@
         dest: /var/www/html/
 
     - name: connection check
-      shell: curl -I http://localhost
+      shell: curl -I http://52.64.148.106/healet-html/
       register: connection_output
 
     - debug:

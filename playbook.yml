@@ -49,7 +49,7 @@
       register: pass_out
 
     - name: output
-      when: pass_out.changed == true
       debug:
-       # msg: Password created successfully
+        msg: Password created successfully
         var: out
+      when: pass_out.changed == true

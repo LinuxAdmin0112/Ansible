@@ -27,11 +27,13 @@
         dest: /var/www/html/
 
     - name: connection check
+      tags: connection
       uri:
         url: http://52.64.148.106/healet-html/
       register: output_check
 
-    - debug:
+    - tags: connection
+      debug:
         var: output_check.msg
 
 #    - name: connection check

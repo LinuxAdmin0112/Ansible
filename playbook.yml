@@ -2,21 +2,46 @@
 - name: User, file, Group
   hosts: all
   vars_prompt:
-    - name: u1
-      prompt: Enter the first user name
-      prompt: Enter the first user
+    - name: name
+      prompt: Enter the  user name
       private: no
+
+    - name: pass
+      prompt: Enter the Password for user
+      private: yes
+
+    - name: uid
+      prompt: Enter the UID for user (Click enter for default)
+      private: no
+
+    - name: gid
+      prompt: Enter the Group Id for user (Click enter for default)
+      private: no
+
+    - name: comment
+      prompt: Enter the Comment here
+      private: no
+
+    - name: home
+      prompt: Enter the home directory for user (Click enter for default)
+      private: no
+
+    - name: shell
+      prompt: Enter the Shell type here (Click enter for default)
+      private: no
+
 
   tasks:
     - name: User creation
       user:
-        name: "{{ item }}"
-        password: "1234"
-        comment: Test
-      with_items:
-        - user1
-        - user2
-        - user3
+        name: "{{ name }}"
+        password: "{{ pass }}"
+        comment: "{{ comment }}"
+        uid: "{{ uid }}"
+        group: "{{ gid }}"
+        home: "{{ home }}"
+        shell: "{{ shell }}"
+        state: present
       register: out
 
     - name: output

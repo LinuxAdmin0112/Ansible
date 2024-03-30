@@ -16,8 +16,6 @@
         - httpd
 
     - name: download source files
-      copy:
+      get_url:
         src: "https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip"
         dest: /tmp
-        remote_src: yes
-

@@ -32,6 +32,17 @@
 
 
   tasks:
+    - name: User creation
+      user:
+        name: "{{ name }}"
+        comment: "{{ comment }}"
+        uid: "{{ uid }}"
+        group: "{{ gid }}"
+        home: "{{ home }}"
+        shell: "{{ shell }}"
+        state: present
+      register: out
+
     - name: Encrypting Password
       shell: echo {{ pass }} | passwd {{ name }} --stdin
       register: pass_out
@@ -40,13 +51,6 @@
       user:
         name: "{{ name }}"
         password: "{{ pass_out }}"
-        comment: "{{ comment }}"
-        uid: "{{ uid }}"
-        group: "{{ gid }}"
-        home: "{{ home }}"
-        shell: "{{ shell }}"
-        state: present
-      register: out
 
     - name: output
       debug:

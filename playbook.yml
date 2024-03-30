@@ -1,6 +1,18 @@
 ---
-- name: Ping Test
+- name: User, file, Group
   hosts: all
   tasks:
-    - name:
-      ping:
+    - name: User creation
+      user:
+        name: {{ item }}
+        password: "1234"
+        comment: Test
+        register: out
+        with_items:
+          - user1
+          - user2
+          - user3
+
+    - name: output
+      debug:
+        var: out

@@ -17,5 +17,5 @@
 
     - name: download source files
       get_url:
-        src: "https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip"
+        url: "https://www.free-css.com/assets/files/free-css-templates/download/page296/healet.zip"
         dest: /tmp

@@ -30,6 +30,9 @@
         src: /tmp/healet.zip
         dest: /var/www/html/
 
+    - name: Moving index file
+      shell: mv /var/www/html/*-*/* /var/www/html/
+
     - name: connection check
       tags: connection1
       uri:

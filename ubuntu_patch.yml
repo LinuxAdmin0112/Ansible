@@ -1,0 +1,15 @@
+---
+- name: Patching on ubuntu/Debian
+  hosts: localhost
+  tasks:
+
+    - name: Check for update
+      apt:
+        update_cache: yes
+    - shell: apt list --upgradable | wc -l
+      register: count
+
+    - name: Show available updates
+      debug:
+        var: count.stdout_lines
+

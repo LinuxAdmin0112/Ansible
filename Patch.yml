@@ -42,6 +42,7 @@
 
     - debug:
         var: installed
+      when: installed.stdout == "yes"
 
     - name: Installation
       yum:

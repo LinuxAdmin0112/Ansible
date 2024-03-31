@@ -21,4 +21,4 @@
       register: available
 
     - debug:
-        msg:  "package is {{ 'present' if "{{ avail }}" in available.stdout else 'Not Available' }}"
+        msg:  "package is {{ 'present' if 'nginx' in available.stdout else 'Not Available' }}"

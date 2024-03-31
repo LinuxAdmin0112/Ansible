@@ -23,7 +23,7 @@
       register: output
 
     - debug:
-        msg: Patches are installed successfully
+        msg: Patches are installed successfull
       when: output.stdout_lines == 0
 
 

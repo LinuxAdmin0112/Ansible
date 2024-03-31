@@ -38,6 +38,6 @@
 
     - name: Installation
       yum:
-        name: {{ avail }}
+        name: "{{ avail }}"
         state: present
       when: install==yes

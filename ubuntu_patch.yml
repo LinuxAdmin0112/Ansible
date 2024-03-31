@@ -16,11 +16,11 @@
     - name: Installing the patches
       apt:
         upgrade: dist
+        update_cache: yes
         cache_valid_time: 15
+      register: output
 
-    - shell: apt list --upgradable | wc -l
-      register: end
     - debug:
-        msg: Patching completed, pls reboot the serve
-      when: end == 1
+        var: output
+
 

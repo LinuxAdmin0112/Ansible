@@ -18,9 +18,8 @@
     - name: check {{ avail }} packages
       yum:
         list: available
-        exact_match: yes
       register: available
 
     - debug:
-        var: available
+        msg: available.name
         #msg:  "package is {{ 'present' if 'nginx' in available.stdout else 'Not Available' }}"

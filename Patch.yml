@@ -9,6 +9,7 @@
     - name: install
       prompt: Installation needed?? (yes/no)
       private: no
+      register: install
 
   tasks:
     - name: Fetching available packages
@@ -40,4 +41,4 @@
       yum:
         name: "{{ avail }}"
         state: present
-      when: install==yes
+      when: install == yes

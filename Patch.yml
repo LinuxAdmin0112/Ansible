@@ -5,7 +5,15 @@
     - name: check available packages
       yum:
         list: updates
+      register: check
+
+    - debug:
+        var: check.results
+
+    - name: check {{ name }} packages
+      yum:
+        list: available
       register: available
 
     - debug:
-        var: available.results
+        msg: " {{ name }} is {{ 'present' if {{ name }} in available.stdout else 'Not Available' }}"

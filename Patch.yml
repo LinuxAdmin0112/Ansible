@@ -1,6 +1,11 @@
 ---
 - name: Patching Playbook
   hosts: all
+  vars_prompt:
+    - name: avail
+      prompt: Enter package name
+      private: no
+
   tasks:
     - name: check available packages
       yum:
@@ -10,10 +15,10 @@
     - debug:
         var: check.results
 
-    - name: check {{ name }} packages
+    - name: check {{ avail }} packages
       yum:
         list: available
       register: available
 
     - debug:
-        msg: " {{ name }} is {{ 'present' if {{ name }} in available.stdout else 'Not Available' }}"
+        msg: " {{ avail }} is {{ 'present' if {{ avail }} in available.stdout else 'Not Available' }}"

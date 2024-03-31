@@ -6,6 +6,10 @@
       prompt: Enter package name
       private: no
 
+    - name: install
+      prompt: Installation needed??
+      private: no
+
   tasks:
     - name: Fetching available packages
       yum:
@@ -24,9 +28,16 @@
       debug:
         var: package.stdout_lines
 
-    - name:
+    - name: Counting
       set_fact:
         count: "{{ package.stdout_lines | length }}"
 
-    - debug:
+    - name: Total count
+      debug:
         msg : "Total number of packages: '{{ count }}'"
+
+    - name: Installation
+      yum:
+        name: {{ avail }}
+        state: present
+      when: {{ install }} is yes || Yes

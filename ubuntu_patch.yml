@@ -17,6 +17,10 @@
       apt:
         upgrade: dist
         cache_valid_time: 15
+
+    - shell: apt list --upgradable | wc -l
+      register: end
     - debug:
         msg: Patching completed, pls reboot the serve
+      when: end <= 1
 

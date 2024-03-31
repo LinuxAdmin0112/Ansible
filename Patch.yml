@@ -7,22 +7,26 @@
       private: no
 
   tasks:
-    - name: Fetch available packages
+    - name: Fetching available packages
       yum:
         list: updates
       register: check
 
-    - debug:
+    - name: Fetched update
+      debug:
         var: check.results
 
     - name: check {{ avail }} packages
-      yum:
-        list: available
-      register: available
+      shell: "yum search {{ avail }}"
+      register: package
+
+    - name: package info
+      debug:
+        var: package.stdout_lines
 
     - name:
       set_fact:
-        package_count: "{{ available.results | length }}"
+        count: "{{ package.stdout_lines | length }}"
+
     - debug:
-        msg: "count is {{ package_count }}"
-        #msg:  "package is {{ 'present' if 'nginx' in available.stdout else 'Not Available' }}"
+        msg : "Total number of packages: '{{ count }}'"

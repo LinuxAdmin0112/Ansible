@@ -7,7 +7,7 @@
       private: no
 
   tasks:
-    - name: check available packages
+    - name: Fetch available packages
       yum:
         list: updates
       register: check

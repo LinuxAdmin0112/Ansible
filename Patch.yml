@@ -21,4 +21,4 @@
       register: available
 
     - debug:
-        msg: " '{{ avail }}' is {{ 'present' if {{ avail }} in available.stdout else 'Not Available' }}"
+        msg:  '{{ avail }}' is "{{ 'present' if {{ avail }} in available.stdout else 'Not Available' }}"

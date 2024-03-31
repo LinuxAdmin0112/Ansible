@@ -1,6 +1,6 @@
 ---
 - name: Patching on ubuntu/Debian
-  hosts: localhost
+  hosts: all
   tasks:
 
     - name: Check for update

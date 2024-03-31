@@ -7,11 +7,11 @@
       apt:
         update_cache: yes
     - shell: apt list --upgradable | wc -l
-      register: count.stdout_lines
+      register: count
 
     - name: Show available updates
       debug:
-        var: count.stdout_lines|length
+        var: count.stdout_lines
 
     - name: Installing the patches
       apt:

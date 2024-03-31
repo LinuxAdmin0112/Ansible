@@ -47,4 +47,4 @@
       yum:
         name: "{{ avail }}"
         state: present
-      when: "{{ install.stdout }}" == yes
+      when: install.stdout == yes

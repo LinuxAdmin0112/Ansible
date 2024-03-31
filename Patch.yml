@@ -38,13 +38,13 @@
         msg : "Total number of packages: '{{ count }}'"
 
     - shell: echo {{ install }}
-      register: install
+      register: installed
 
     - debug:
-        var: install
+        var: installed
 
     - name: Installation
       yum:
         name: "{{ avail }}"
         state: present
-      when: install.stdout == yes
+      when: installed.stdout == "yes"

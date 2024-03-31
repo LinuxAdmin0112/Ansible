@@ -21,6 +21,8 @@
       register: output
 
     - debug:
-        var: output
+        msg: Patched are installed successfully
+      when: output.available_updates | length > 0
+
 
 

@@ -11,7 +11,7 @@
 
     - name: Show available updates
       debug:
-        var: count
+        var: count.stdout_lines|length
 
     - name: Installing the patches
       apt:

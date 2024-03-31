@@ -18,11 +18,13 @@
         upgrade: dist
         update_cache: yes
         cache_valid_time: 15
+
+    - shell: apt list --upgradable | wc -l
       register: output
 
     - debug:
         msg: Patched are installed successfully
-      when: output.failed == "false"
+      when: output.stdout_lines == 1
 
 
 

@@ -20,6 +20,9 @@
         list: available
       register: available
 
+    - name:
+        set_fact:
+          package_count: "{{ available.results | length }}"
     - debug:
-        var: available
+        var: "{{ package_count }}"
         #msg:  "package is {{ 'present' if 'nginx' in available.stdout else 'Not Available' }}"

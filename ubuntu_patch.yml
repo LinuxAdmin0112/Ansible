@@ -6,8 +6,8 @@
     - name: Check for update
       apt:
         update_cache: yes
-    #- shell: apt list --upgradable | wc -l
-      register: count
+    - shell: apt list --upgradable | wc -l
+      register: count.stdout_lines
 
     - name: Show available updates
       debug:

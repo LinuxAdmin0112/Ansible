@@ -40,6 +40,9 @@
     - shell: echo {{ install }}
       register: install
 
+    - debug:
+        var: install
+
     - name: Installation
       yum:
         name: "{{ avail }}"

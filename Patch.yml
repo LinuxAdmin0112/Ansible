@@ -7,7 +7,7 @@
       private: no
 
     - name: install
-      prompt: Installation needed??
+      prompt: Installation needed?? (yes/no)
       private: no
 
   tasks:
@@ -40,4 +40,4 @@
       yum:
         name: {{ avail }}
         state: present
-      when: '{{ install }}' is yes || Yes
+      when: '{{ install }}' == yes

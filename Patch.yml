@@ -40,4 +40,4 @@
       yum:
         name: {{ avail }}
         state: present
-      when: '{{ install }}' == yes
+      when: install==yes

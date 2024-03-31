@@ -18,5 +18,5 @@
         upgrade: dist
         cache_valid_time: 15
     - debug:
-        msg: Patching completed, pls reboot the server
+        msg: Patching completed, pls reboot the serve
 

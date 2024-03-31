@@ -8,4 +8,4 @@
       register: available
 
     - debug:
-        var: available
+        var: available.results

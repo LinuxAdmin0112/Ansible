@@ -1,0 +1,11 @@
+---
+- name: Patching Playbook
+  hosts: all
+  tasks:
+    - name: check available packages
+      yum:
+        check_update: yes
+      register: available
+
+    - debug:
+        var: available

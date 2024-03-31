@@ -5,12 +5,18 @@
 
     - name: Check for update
       apt:
-        upgrade: dist
         update_cache: yes
-        cache_valid_time: 15
+      shell: apt list --upgradable | wc -l
       register: count
 
     - name: Show available updates
       debug:
         var: count.stdout_lines
+
+    - name: Installing the patches
+      apt:
+        upgrade: dist
+        cache_valid_time: 15
+    - debug:
+        msg: Patching completed, pls reboot the server
 

@@ -22,5 +22,5 @@
       register: end
     - debug:
         msg: Patching completed, pls reboot the serve
-      when: end <= 1
+      when: end == 1
 

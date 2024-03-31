@@ -24,7 +24,7 @@
 
     - debug:
         msg: Patches are installed successfully
-      when: output.stdout_lines|length == 1
+      when: output.stdout_lines|length == 0
 
 
 

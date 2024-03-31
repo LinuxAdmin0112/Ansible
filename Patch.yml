@@ -18,6 +18,7 @@
     - name: check {{ avail }} packages
       yum:
         list: available
+        exact_match: yes
       register: available
 
     - debug:

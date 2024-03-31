@@ -24,11 +24,11 @@
 
     - debug:
         msg: Patches are installed successfully, Pls reboot the server
-      when: output.stdout_lines|length == 0
+      when: output.stdout_lines|length == 1
 
     - debug:
         msg: Still patches are pending, Pls check
-      when: output.stdout_lines|length == 1
+      when: output.stdout_lines|length != 1
 
 
 

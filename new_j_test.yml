@@ -1,0 +1,7 @@
+---
+- name: Testing Jinja file for output generation
+  hosts: all
+  tasks:
+    - name: First test
+      shell: hostname
+      register: hnme

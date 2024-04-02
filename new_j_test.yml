@@ -8,6 +8,6 @@
 
     - name: Export output file
       template:
-        src: sample.yml
+        src: sample.j2
         dest: ~/Ansible/output.csv
 

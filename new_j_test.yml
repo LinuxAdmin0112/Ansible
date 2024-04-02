@@ -8,7 +8,7 @@
 
     - name: Current_Date
       set_fact:
-        current_date: '"{{ ansible_date_time.date }}"_"{{ ansible_date_time.time }}"'
+        current_date: "{{ ansible_date_time.date }}_{{ ansible_date_time.time }}"
 
     #- name: Current_time
     #  set_fact:

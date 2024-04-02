@@ -6,3 +6,8 @@
       shell: hostname
       register: hnme
 
+    - name: Export output file
+      template:
+        src: sample.yml
+        dest: ~/Ansible/output.csv
+

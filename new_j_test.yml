@@ -10,7 +10,11 @@
       set_fact:
         current_date: "{{ ansible_date_time.date }}"
 
+    - name: Current_time
+      set_fact:
+        current_time: "{{ ansible_date_time.time }}"
+
     - name: Export output file
       template:
         src: sample.j2
-        dest: ~/output_{{ current_date }}.csv
+        dest: ~/output_{{ current_date }}_{{ current_time }}.csv

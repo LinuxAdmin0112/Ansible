@@ -4,9 +4,13 @@
   tasks:
     - name: First test
       shell: hostname
-      register: hnme
+      register: hostname
+
+    - name: Current_Date
+      set_fact:
+        current_date: "{{ ansible_date_time.date }}"
 
     - name: Export output file
       template:
         src: sample.j2
-        dest: ~/Ansible/output_$(date).csv
+        dest: ~/output_{{ current_date }}.csv

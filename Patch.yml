@@ -57,6 +57,9 @@
       register: restart_output
 
     - name:
+    - debug:
+        var: restart_output
+    - name:
       template:
         src: jinja.j2
         dest: ~/file.csv.j2

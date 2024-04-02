@@ -54,6 +54,7 @@
       service:
         name: "{{ avail }}"
         state: restarted
+      when: installed.stdout == "yes"
       register: restart_output
 
     - name:

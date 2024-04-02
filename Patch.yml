@@ -49,3 +49,14 @@
         name: "{{ avail }}"
         state: present
       when: installed.stdout == "yes"
+
+    - name: service status
+      service:
+        name: "{{ avail }}"
+        state: restarted
+      register: restart_output
+
+    - name:
+      template:
+        src: jinja.j2
+        dest: ~/file.csv.j2

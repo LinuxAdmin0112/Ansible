@@ -17,5 +17,5 @@ memtotal_mb  : {{ ansible_memtotal_mb }}
 Installation info
 wanted install          : {{ installed.stdout }}
 package name            : {{ avail }}
-Total number of packages: '{{ count }}
+Total number of packages: {{ count }}
 service_status          : {{ restart_output.state }}

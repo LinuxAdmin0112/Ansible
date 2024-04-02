@@ -19,4 +19,4 @@
         src: sample.j2
        # dest: ~/output_{{ current_date }}_{{ current_time }}.csv
        # dest: ~/output_{{ ansible_date_time.date }}_{{ ansible_date_time.time }}.csv
-        dest: "{{ current_date }}"
+        dest: ~/output_{{ current_date }}.csv

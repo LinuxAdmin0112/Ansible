@@ -54,12 +54,12 @@
       service:
         name: "{{ avail }}"
         state: restarted
-      when: installed.stdout == "yes"
       register: restart_output
 
     - name:
       debug:
         var: restart_output.state
+
     - name:
       template:
         src: jinja.j2

@@ -54,7 +54,7 @@
       service:
         name: "{{ avail }}"
         state: restarted
-      register: restart_output
+      register: restart_output.state
 
     - name:
       debug:

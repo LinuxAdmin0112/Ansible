@@ -54,11 +54,11 @@
       service:
         name: "{{ avail }}"
         state: restarted
-      register: restart_output.state
+      register: restart_output
 
     - name:
       debug:
-        var: restart_output
+        var: restart_output.state
     - name:
       template:
         src: jinja.j2

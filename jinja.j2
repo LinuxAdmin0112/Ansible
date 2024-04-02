@@ -1,3 +1,20 @@
+System Info:
+hostname     : {{ ansible_hostname }}
+kernel       : {{ ansible_kernel }}
+system       : {{ ansible_system }}
+os_family    : {{ ansible_os_family }}
+architecture : {{ ansible_architecture }}
+bios_date    : {{ ansible_bios_date }}
+bios_version : {{ ansible_bios_version }}
+distribution : {{ ansible_distribution }}
+major_version: {{ ansible_distribution_major_version }}
+version      : {{ ansible_distribution_version }}
+memfree_mb   : {{ ansible_memfree_mb }}
+memtotal_mb  : {{ ansible_memtotal_mb }}
+
+******************************************
+
+Installation info
 wanted install: {{ installed.stdout }}
 package name: {{ avail }}
-service: {{ ansible_hostname }}
+service_status: {{ restart_output.state }}
